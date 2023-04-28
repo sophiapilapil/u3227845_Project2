@@ -2,6 +2,8 @@ h1 {
     font-family: 'courage', sans-serif;
     font-style: normal;
     font-weight: 400;
+    letter-spacing: 3px;
+    color: #BE1E2D;
     }
   
   h2 {
@@ -13,7 +15,6 @@ h1 {
   p{
     font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
   }
   
   
@@ -32,10 +33,12 @@ h1 {
     }
       /* Style for ul */
     .logo{
-      color: white;
       background-color: #BE1E2D;
       padding: .5em 2em .5em 1em;
       border-radius: 0 35px 35px 0;
+    }
+    .logo h1{
+      color: white;
     }
    .nav-links {
       display: flex;
@@ -112,4 +115,9 @@ h1 {
     }
     .hero-content p {
       font-size: 24px;
+    }
+
+/* Creating the margins for the main content */
+    .inner {
+      margin: 5em;
     }
