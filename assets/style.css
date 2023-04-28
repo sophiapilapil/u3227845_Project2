@@ -1,0 +1,115 @@
+h1 {
+    font-family: 'courage', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    }
+  
+  h2 {
+    font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  p{
+    font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  
+  /*Nav Bar Style*/
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      padding: 0.5em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 97%;
+      z-index: 1;
+    }
+      /* Style for ul */
+    .logo{
+      color: white;
+      background-color: #BE1E2D;
+      padding: .5em 2em .5em 1em;
+      border-radius: 0 35px 35px 0;
+    }
+   .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-item {
+      margin: 0 10px;
+    }
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      color: #BE1E2D;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-style: normal; 
+    }
+    /* Style for ul with white background and rounded corners */
+    .nav-links-box {
+      background-color: white;
+      border-radius: 25px;
+      padding: 15px;
+    }
+  
+  
+  /* Hero Image*/
+    .hero-container {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+  
+    .hero-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/hero-img.jpeg);
+      background-size: cover;
+      z-index: -1;
+      border-radius: 0 0 25px 25px;
+    }
+  
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content:end;
+      align-items: flex-start;
+      background-color: rgba(190, 30, 45, 0.8);
+      color: white;
+    }
+    .hero-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(2px);
+      z-index: -1;
+    }
+    .hero-content h1 {
+      font-size: 50px;
+      line-height: 0;
+    }
+    .hero-content p {
+      font-size: 24px;
+    }
