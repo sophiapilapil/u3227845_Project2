@@ -94,7 +94,7 @@ body {
 
         }
         .menu li a:hover {
-            font-weight:bolder;
+            text-decoration: underline;
         }
         .menu{
             transition: max-height .5s ease-out;
@@ -233,7 +233,7 @@ body {
       top: 0;
       left: -50%;
       width: 200%;
-      animation: parallax 100s linear infinite;
+      animation: parallax 70s linear infinite;
     }
     @keyframes parallax {
       0% {
@@ -300,9 +300,9 @@ body {
       }
     }
     @media (min-width:0px) { 
-      .hero-content h1 {
-        font-size: 1em;
-        line-height: 0;
+      .hero-content h2 {
+        font-size: 1.3em;
+        line-height: .2em;
         color: white;
       }
       .hero-content p {
@@ -310,11 +310,14 @@ body {
       }
     }
     @media (min-width:768px) { 
-      .hero-content h1 {
-        font-size: 3em
+      .hero-content h2 {
+        font-size: 2em
       }
-      .hero-content p {
-        font-size: 1em;
+    }
+    @media (min-width:1440px) { 
+      .hero-content h2 {
+        font-size: 4em;
+        line-height: .5em;
       }
     }
 
@@ -358,7 +361,7 @@ body {
     .card {
       background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.10);
+      box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.10);
       height: 200px;
       overflow: hidden;
       position: relative;
@@ -512,6 +515,13 @@ body {
     transition: background-color 0.3s ease-in-out;
     font-family: "Futura", "Trebuchet MS", Arial, sans-serif;;
   }
+  .button a {
+    text-decoration: none;
+    color: #BE1E2D;
+  }
+  .button a:hover {
+    color: white;
+  }
 
   .button:hover {
     background-color: #BE1E2D;
@@ -604,6 +614,7 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     overflow: hidden;
     border-radius: 2em;
+    height: fit-content;
   }
   /* Top genres */
   #rnb {
@@ -697,10 +708,22 @@ body {
 
 
 /* Section 4 */
+@media (min-width:0px) {
   #section4 {
     margin-bottom: 0;
-    
+    margin-top: -2em;
+    position: relative;
+    z-index: -1;
   }
+}
+@media (min-width:768px) {
+  #section4 {
+    margin-bottom: 0;
+    margin-top: -7em;
+    position: relative;
+    z-index: -1;
+  }
+}
 
 /* Section 5 */
   @media (min-width:0px) {
@@ -738,27 +761,41 @@ body {
 footer {
   background-color: #000;
   color: #fff;
-  padding: 20px;
+  padding: 7em 1em 1em 0em;
+  height: 10em;
+  border-radius: 2em 2em 0 0;
+  margin-top: -1.5em;
   position: relative;
+  z-index: 1;
+}
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
+footer .logo2 {
+  order: 2;
+  text-align: right;
+  background-color: none;
+  bottom: 0;
+}
 
-.footercontent {
+.content {
   order: 1;
   flex: 2 0 auto;
   text-align: left;
+  margin-left: 1em;
 }
 
-.footercontent p {
+.content p {
   margin: 0;
 }
 
-.footercontent ul {
-  margin: 0;
+.content ul {
+  margin-top: 1em;
   padding: 0;
   list-style: none;
   display: flex;
@@ -767,9 +804,11 @@ footer {
 }
 
 .content ul li {
-  margin-right: 10px;
+  margin-right: 1em;
 }
 
-.content ul li:last-child {
-  margin-right: 0;
+.content ul li a{
+  text-decoration: none;
+  color: #BE1E2D;
 }
+
