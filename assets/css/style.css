@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: white;
 }
 
 /* Text Styles */
@@ -26,6 +27,7 @@ body {
     font-style: normal;
     font-size:12px;
     margin-top: 0;
+    line-height: 1em;
   }
 
   h3 {
@@ -66,7 +68,6 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
       background-color: transparent;
       padding: 0.5em;
       position:fixed;
@@ -77,23 +78,22 @@ body {
     }
     .nav-links-box {
       background-color: white;
-      border-radius: 25px;
+      border-radius: 2em;
       padding: 0.1em;
     }
     /* Hamburger Menu */
       .menu li {
           display: inline;
-          margin-right: 0.2em;
+          margin-left: 1em;
         }
         .menu li a {
-          color: white;
           text-decoration: none;
           color: #BE1E2D;
           font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
           font-style: normal; 
 
         }
-        .menu li:hover a {
+        .menu li a:hover {
             font-weight:bolder;
         }
         .menu{
@@ -103,10 +103,10 @@ body {
             cursor: pointer;
             float: right;
             right: 0;
-            padding: 3em;
+            padding: 1em;
         }
         .menu-line {
-            background: white;
+            background: #BE1E2D;
             display: block;
             height: 2px;
             position: relative;
@@ -114,7 +114,7 @@ body {
         }
         .menu-line::before,
         .menu-line::after{
-            background:white;
+            background:#BE1E2D;
             content: '';
             display: block;
             height: 100%;
@@ -420,7 +420,7 @@ body {
     .wrapper .card {
       background-color: #ffffff;
       border-radius: 1em;
-      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+      box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.15);
       margin-bottom: 20px;
       height: 2em;
     }
@@ -471,9 +471,64 @@ body {
     font-size: 12px;
   }
 
+/* Two Column Cards Forms */
+  .card-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    color: black;
+  }
+
+  .card-container .card {
+    width: 45%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    box-sizing: border-box;
+    height: 20em;
+  }
+
+  .card-container .card form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card-container label {
+    margin-top: .5em;
+  }
+
+
+
+/* Buttons */
+  .button {
+    display: inline-block;
+    padding: .5em;
+    background-color: #fff;
+    border: 2px solid #BE1E2D;
+    color: #BE1E2D;
+    border-radius: 2em;
+    transition: background-color 0.3s ease-in-out;
+    font-family: "Futura", "Trebuchet MS", Arial, sans-serif;;
+  }
+
+  .button:hover {
+    background-color: #BE1E2D;
+    color: #fff;
+  }
+  nav li.button:hover a {
+    color: white;
+    font-weight: normal;
+  }
+  .card-container .button {
+    margin-top: 1em;
+  }
+
+
 /*Section 1*/
   @media (min-width:0px) {
-    #section1 .grid-img {
+    .grid-img {
       background-image: url(../images/img1.png);
       background-size: cover;
       filter: grayscale(100%);
@@ -528,6 +583,7 @@ body {
       background-repeat: no-repeat;
       background-size: contain;
       background-position-x: right;
+      filter: none;
     }
   }
   @media (min-width:768px) {
@@ -636,4 +692,30 @@ body {
     color: black;
   }
 
+
 /* Section 4 */
+  #section4 {
+    margin-bottom: 0;
+    
+  }
+
+/* Section 5 */
+#section5 {
+  margin-top: -2em;
+  
+}
+#section5 .grid2{
+  grid-template-columns: 1fr 2fr;
+}
+ #section5 .grid-img{
+  background-image: url(../images/img2.jpeg);
+  background-attachment: fixed;
+  background-size:contain;
+  background-repeat: no-repeat;
+ }
+
+#section5 .grid-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
