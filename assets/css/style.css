@@ -18,6 +18,7 @@ body {
     font-style: normal;
     font-weight: bolder;
     font-size:12px;
+    margin-top: 0;
   }
   
   p{
@@ -33,6 +34,7 @@ body {
     font-size:10px;
     font-style: italic;
   } /* Use these for captions */
+  ;
 }
 @media (min-width:768px) {
   h1 {
@@ -215,7 +217,7 @@ body {
   /* Hero Image*/
     .hero-container {
       position: relative;
-      height: 100vh;
+      height: 105vh;
       width: 100%;
       overflow: hidden;
       border-radius: 0 0 0 5em;
@@ -252,7 +254,7 @@ body {
         right: 0;
         width: 40%;
         height: 30%;
-        padding: 2em;
+        padding: 3em;
         display: flex;
         flex-direction: column;
         justify-content:end;
@@ -318,10 +320,17 @@ body {
 
 
 /* Creating the margins for the main content */
-    .inner {
-      margin: 5em;
-      justify-content: center;
-      margin-top: 0;
+    @media (min-width:0px) {
+      .inner {
+        margin: 1em;
+        justify-content: center;
+        margin-top: 0;
+      }
+    }
+    @media (min-width:768px) {
+      .inner {
+        margin: 5em;
+      }
     }
 
 
@@ -337,21 +346,23 @@ body {
     align-items: center;
   }
 
-/* 3 Grid */
+/* 3 Grid Cards */
   @media (min-width:0px) {
     .grid3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
+      margin-bottom: 5em;
     }
     
     .card {
       background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.10);
       height: 200px;
       overflow: hidden;
       position: relative;
+      background-size: cover;
     }
     
     .card:hover .front {
@@ -372,12 +383,12 @@ body {
     }
     
     .card-content.front {
-      background-color: #F0E68C;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       transform: translateY(0);
+      background-size: cover;
     }
     
     .card-content.back {
@@ -386,19 +397,78 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
       transform: translateY(100%);
     }
     
     .card-content h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 20px;
     }
-    
-    .card-content p {
-      font-size: 16px;
+  }
+
+/* Vertical Scroll cards */
+  @media (min-width:0px) {
+    .wrapper {
+      height: 20em;
+      width: 95%;
+      overflow-x: scroll;
+      white-space: nowrap;
+      background-color: #BE1E2D;
+      padding: 1em;
+      border-radius: 2em;
+    }
+    .wrapper .card {
+      background-color: #ffffff;
+      border-radius: 1em;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
+      height: 2em;
     }
-    
+    .card-row {
+      display: grid;
+      grid-template-columns: 0.5fr 4fr 3fr;
+    }
+    .card-col-1 {
+      padding: 0.5em;
+      border-right: 1px solid #BE1E2D;
+      text-align: right;
+    }
+    .card-col-2 {
+      padding: 0.5em;
+    }
+    .card-col-3 {
+      padding: 0.5em;
+    }
+  }
+  @media (min-width:1024px) {
+    .wrapper .card {
+      border-radius: 2em;
+      margin-bottom: 20px;
+      height: 3em;
+    }
+  }
+
+/* Horizontal scroll gallery */
+  .gallery {
+    height: 250px;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  .gallery .card {
+    display: inline-block;
+    position: relative;
+    height: 200px; 
+    width: 150px; 
+    margin-right: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .gallery .card-content h2 {
+    font-size: 13px;
+  }
+  .gallery .card-content p {
+    font-size: 12px;
   }
 
 /*Section 1*/
@@ -422,6 +492,8 @@ body {
       text-align: right;
     }
   } 
+
+
 
 /* Section 2 */
   @media (min-width:0px) {
@@ -474,3 +546,94 @@ body {
     overflow: hidden;
     border-radius: 2em;
   }
+  /* Top genres */
+  #rnb {
+    background-image: url(../images/rnb.jpeg);
+    background-position-y:20%;
+  }
+  #rnb .card-content.back {
+    background-color: #b1968a;
+  }
+  #rap {
+    background-image: url(../images/rap.jpeg);
+    background-position-y:center;
+  }
+  #rap .card-content.back {
+    background-color: black;
+    color: white;
+  }
+  #indie {
+    background-image: url(../images/indie.jpeg);
+    background-position-y:80%;
+  }
+  #indie .card-content.back {
+    background-color: #9a6972;
+    color: white;
+  }
+  /* Top artists */
+  #brock {
+    background-image: url(../images/brock.jpeg);
+    background-position-x: center;
+  }
+  #brock .card-content.back {
+    background-color: rgb(49, 81, 209);
+    color: white;
+  }
+  #brent {
+    background-image: url(../images/brent.jpeg);
+  }
+  #brent .card-content.back {
+    background-color: #414c31;
+    color: white;
+  }
+  #frank {
+    background-image: url(../images/frank.jpeg);
+  }
+  #frank .card-content.back {
+    background-color: #a2ac8a;
+    color: black;
+  }
+  #sza {
+    background-image: url(../images/sza.jpeg);
+  }
+  #sza .card-content.back {
+    background-color: #233b4f;
+    color: white;
+  }
+  #dijon {
+    background-image: url(../images/dijon.png);
+  }
+  #dijon .card-content.back {
+    background-color: #b8a78e;
+    color: black;
+  }
+  #steve {
+    background-image: url(../images/steve.png);
+  }
+  #steve .card-content.back {
+    background-color:#485f2e;
+    color: white;
+  }
+  #bryson {
+    background-image: url(../images/bryson.jpeg);
+  }
+  #bryson .card-content.back {
+    background-color:#8c3e21;
+    color: white;
+  }
+  #wknd {
+    background-image: url(../images/wknd.jpeg);
+  }
+  #wknd .card-content.back {
+    background-color: #0570ac;
+    color: white;
+  }
+  #mac {
+    background-image: url(../images/mac.jpeg);
+  }
+  #mac .card-content.back {
+    background-color:#c4cabe;
+    color: black;
+  }
+
+/* Section 4 */
