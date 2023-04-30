@@ -1,68 +1,216 @@
-h1 {
+body {
+  margin: 0;
+}
+
+/* Text Styles */
+@media (min-width:0px) {
+  h1 {
     font-family: 'courage', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    letter-spacing: 3px;
+    font-weight: 300;
     color: #BE1E2D;
-    }
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    } /* Make sure that this is only applied the most important text */
   
   h2 {
     font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: bolder;
+    font-size:12px;
   }
   
   p{
     font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
     font-style: normal;
+    font-size:12px;
+    margin-top: 0;
   }
+
+  h3 {
+    font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
+    font-style: normal;
+    font-size:10px;
+    font-style: italic;
+  } /* Use these for captions */
+}
+@media (min-width:768px) {
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px;
+  }
+  h3 {
+    font-size: 13px;
+  }
+}
   
   
   /*Nav Bar Style*/
-    .nav-bar {
+    .logo{
+      background-color: #BE1E2D;
+      padding: 0 2em 0 1em;
+      border-radius: 0 2em 2em 0;
+    }
+    .logo h1{
+      color: white;
+      font-size: 25px;
+    }
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px;
       background-color: transparent;
       padding: 0.5em;
-      position: fixed;
+      position:fixed;
       top: 0;
       left: 0;
       width: 97%;
       z-index: 1;
     }
-      /* Style for ul */
-    .logo{
-      background-color: #BE1E2D;
-      padding: .5em 2em .5em 1em;
-      border-radius: 0 35px 35px 0;
-    }
-    .logo h1{
-      color: white;
-    }
-   .nav-links {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-item {
-      margin: 0 10px;
-    }
-    .nav-link {
-      color: white;
-      text-decoration: none;
-      color: #BE1E2D;
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-style: normal; 
-    }
-    /* Style for ul with white background and rounded corners */
     .nav-links-box {
       background-color: white;
       border-radius: 25px;
-      padding: 15px;
+      padding: 0.1em;
     }
-  
+    /* Hamburger Menu */
+      .menu li {
+          display: inline;
+          margin-right: 0.2em;
+        }
+        .menu li a {
+          color: white;
+          text-decoration: none;
+          color: #BE1E2D;
+          font-family:"Futura", "Trebuchet MS", Arial, sans-serif;
+          font-style: normal; 
+
+        }
+        .menu li:hover a {
+            font-weight:bolder;
+        }
+        .menu{
+            transition: max-height .5s ease-out;
+        }
+        .menu-btn{
+            cursor: pointer;
+            float: right;
+            right: 0;
+            padding: 3em;
+        }
+        .menu-line {
+            background: white;
+            display: block;
+            height: 2px;
+            position: relative;
+            width: 24px;
+        }
+        .menu-line::before,
+        .menu-line::after{
+            background:white;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all .2s ease-out;
+            width: 100%;
+        }
+        .menu-line::before{
+            top: 5px;
+        }
+        .menu-line::after{
+            top: -5px;
+        }
+        .side-menu {
+            display: none;
+        }
+        
+
+        /*Hamburger turns to "X"*/
+            .side-menu:checked ~ nav{
+                max-height: 100%;
+            }
+            .side-menu:checked ~ .menu-btn .menu-line {
+                background: transparent;
+            }
+            .side-menu:checked ~ .menu-btn .menu-line::before {
+                transform: rotate(-45deg);
+                top:0;
+            }
+            .side-menu:checked ~ .menu-btn .menu-line::after {
+                transform: rotate(45deg);
+                top:0;
+            }
+            @media (min-width:900px) {
+                .menu-btn{
+                    display: none;
+                }
+            }
+
+        @media (max-width:900px) {
+            nav .menu-btn{
+                display: block;
+                z-index: 100;
+                position: fixed;
+              }
+            #click:checked ~ .menu-btn:before{
+                content: "\f00d";
+            }
+            .menucontainer{
+                position: fixed;
+                top: 0px;
+                left: -100%;
+                background: white;
+                height: 100%;
+                padding-top: 200px;
+                width: 100%;
+                text-align: center;
+                display: block;
+                z-index: 80;
+            }
+            .side-menu:checked ~ .menucontainer{
+                left: 0;
+            }
+            .menu li{
+                width: 100%;
+            }
+            nav ul li a{
+                width: 100%;
+                display: block;
+                font-size: 1em;
+                transition: 0.6s ease;
+            }
+            #click:checked ~ ul li a{
+                margin-left: 0px;
+            }
+            .menu a:active{
+                background: none;
+                color: #f27175;
+            }
+            .menu .button {
+                display: none;
+            }
+            .menu .nav-hidden{
+                display: block;
+            }
+        }
+
+        @media (min-width:900px) {
+            .menu .nav-hidden {
+                display: none;
+            }
+            nav .logo img {
+                width: 20em;
+                display: inline-block;
+            }
+        }
+    
+    
   
   /* Hero Image*/
     .hero-container {
@@ -70,54 +218,259 @@ h1 {
       height: 100vh;
       width: 100%;
       overflow: hidden;
+      border-radius: 0 0 0 5em;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     }
-  
-    .hero-container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+    /* Parallax Images */
+    .parallax-bg {
+      background-image: url("../images/hero-img.jpeg");
       height: 100%;
-      background-image: url(../images/hero-img.jpeg);
       background-size: cover;
       z-index: -1;
-      border-radius: 0 0 25px 25px;
-    }
-  
-    .hero-content {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 40%;
-      height: 100%;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content:end;
-      align-items: flex-start;
-      background-color: rgba(190, 30, 45, 0.8);
-      color: white;
-    }
-    .hero-content::before {
-      content: "";
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(2px);
-      z-index: -1;
+      left: -50%;
+      width: 200%;
+      animation: parallax 100s linear infinite;
     }
-    .hero-content h1 {
-      font-size: 50px;
-      line-height: 0;
+    @keyframes parallax {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-20%);
+      }
+      100% {
+        transform: translateX(0);
+      }
     }
-    .hero-content p {
-      font-size: 24px;
+    /* Resposive hero content */
+    @media (min-width:0px) {
+      .hero-content {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40%;
+        height: 30%;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content:end;
+        align-items: flex-start;
+        background-color: rgba(190, 30, 45, 0.8);
+        color: white;
+      }
+      .hero-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(2px);
+        z-index: -1;
+      }
     }
+    @media (min-width:768px) {
+      .hero-content {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content:end;
+        align-items: flex-start;
+        background-color: rgba(190, 30, 45, 0.8);
+        color: white;
+      }
+      .hero-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(2px);
+        z-index: -1;
+      }
+    }
+    @media (min-width:0px) { 
+      .hero-content h1 {
+        font-size: 1em;
+        line-height: 0;
+        color: white;
+      }
+      .hero-content p {
+        font-size: 1em;
+      }
+    }
+    @media (min-width:768px) { 
+      .hero-content h1 {
+        font-size: 3em
+      }
+      .hero-content p {
+        font-size: 1em;
+      }
+    }
+
 
 /* Creating the margins for the main content */
     .inner {
       margin: 5em;
+      justify-content: center;
+      margin-top: 0;
     }
+
+
+/* 2 Grid */
+  .grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 25em;
+    gap: 2em;
+  }
+
+  .grid2 div {
+    align-items: center;
+  }
+
+/* 3 Grid */
+  @media (min-width:0px) {
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .card:hover .front {
+      transform: translateY(-100%);
+    }
+    
+    .card:hover .back {
+      transform: translateY(0);
+    }
+    
+    .card-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .card-content.front {
+      background-color: #F0E68C;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(0);
+    }
+    
+    .card-content.back {
+      background-color: #ADD8E6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(100%);
+    }
+    
+    .card-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .card-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+  }
+
+/*Section 1*/
+  @media (min-width:0px) {
+    #section1 .grid-img {
+      background-image: url(../images/img1.png);
+      background-size: cover;
+      filter: grayscale(100%);
+      background-position-y: bottom;
+    }
+    #section1 .grid-content {
+      padding: 1em;
+    }
+  } 
+  @media (min-width:768px) {
+    #section1 .grid-img {
+      background-position-y: bottom;
+    }
+    #section1 .grid-content {
+      padding: 4em;
+      text-align: right;
+    }
+  } 
+
+/* Section 2 */
+  @media (min-width:0px) {
+    .card1 {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      margin-top: 0;
+      background-color: #BE1E2D;
+      color: white;
+      height: 100%;
+      margin-bottom: 2em;
+    }
+    .card1 h1{
+      color: white;
+    }
+    .card-body {
+      padding: 1rem;
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-bottom: 8em;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .col-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    #section2 .grid-img {
+      background-image:url(../images/SOTD.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-x: right;
+    }
+  }
+  @media (min-width:768px) {
+    .card-body {
+      padding: 2rem;
+      margin-left: 3em;
+      margin-right: 5em;
+      margin-bottom: 2em;
+    }
+  }
+
+/* Section 3 */
+  .card2 {
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border-radius: 2em;
+  }

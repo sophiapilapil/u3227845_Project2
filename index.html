@@ -15,24 +15,41 @@
   </head>
   <body>
     <header>
-      <nav class="nav-bar">
+      <nav>
+
         <div class="logo">
           <h1>the soul.</h1>
         </div>
-        <div class="nav-links-box">
-          <ul class="nav-links">
-            <li class="nav-item"><a class="nav-link" href="#section1">about</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section2">the core</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section3">share a song</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section4">MOTD</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section5">sign up</a></li>
-          </ul>
+
+          <input class="side-menu" type="checkbox" id="side-menu">
+        
+        <label class="menu-btn" for="side-menu">
+            <span class="menu-line"></span>
+            <span class="menu-line2"></span>
+            <span class="menu-line3"></span>
+        </label>
+        <div class="menucontainer">
+          <div class="nav-links-box">
+            <ul class="menu">
+              <li><a class="nav-hidden" href="index.html">back to the top.</a></li><!--Shown ony in overlay-->
+              <li><a href="#section1">about</a></li>
+              <li><a href="#section2">SOTD</a></li>
+              <li><a href="#section3">the core</a></li>
+              <li><a href="#section4">suggest a song</a></li>
+              <li><a class="nav-hidden" href="#secion5">request a profile</a></li> <!--Shown ony in overlay--> 
+              <li class="button"><a href="#section5">request a profile</a><li>
+            </ul>
+          </div>
+
         </div>
+
       </nav>
+        
     </header>
 
 
     <div class="hero-container">
+      <div class="parallax-bg"></div>
       <div class="hero-content">
         <h1>music is food</h1>
         <h1>for the soul.</h1>
@@ -44,30 +61,101 @@
 
     <main>
 
-     <div class="inner">
         <section id="section1">
-            <h1>about.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </section>
+          <div class="grid2">
+
+            <div class="grid-content">
+              <h1>about.</h1>
+              <p>Someone's music taste will tell you a lot about themselves. The Soul creates a portfolio based on someone's music activity and captures it all in one website based on the data that Spotify provides. I made this Soul Portfolio based on my own Spotify.</p>
+            </div>
+
+            <div class="grid-img"></div>
+
+          </div>
+        </section>
           
-          <section id="section2">
-            <h1>the core of the soul.</h1>
-            <p>Phasellus in rutrum turpis, sed malesuada ipsum.</p>
-          </section>
-          
+        <section id="section2">
+            <div class="card1">
+              <div class="card-body">
+                <div class="grid2">
+                  <div class="grid-img"></div>
+
+                  <div class="grid-content">
+                  <h1>song of the day.</h1>
+                  <p>Every song has the ability to capture a memory. So, here's my song of the day, followed by a memory I have with the song.</p>
+                  <h3>Click the album to listen.</h3>
+                  <h2>Title</h2>
+                  <p>Fat Bottomed Girls</p>
+                  <h2>Artist</h2>
+                  <p>Queen (1978)</p>
+                  <h2>Memory</h2>
+                  <p>My first car was this 2001 blue, 4-seater convertable car where the only source of music was CDs. One time, my brothers and I and we were belting this song with the top down. I don't have that car anymore but will be one of my favourite memories in that car.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        </section>
+        
+        <div class="inner">
           <section id="section3">
-            <h1>share a song.</h1>
-            <p>Donec ac diam eget quam ornare eleifend.</p>
+            <div class="card2">
+              <div class="card-body">
+
+                <h1>the core of the soul.</h1>
+                <p>Look at the core of my Soul with a hall of fame of music.</p>
+
+
+                <h2>top genre.</h2>
+                <div class="grid3">
+
+                  <div class="card">
+                    <div class="card-content front">
+                      <h2>R&B</h2>
+                      <p>This is the front of card 1</p>
+                    </div>
+                    <div class="card-content back">
+                      <h2>Card 1</h2>
+                      <p>This is the back of card 1</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-content front">
+                      <h2>Rap</h2>
+                      <p>This is the front of card 2</p>
+                    </div>
+                    <div class="card-content back">
+                      <h2>Card 2</h2>
+                      <p>This is the back of card 2</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-content front">
+                      <h2>Indie</h2>
+                      <p>This is the front of card 3</p>
+                    </div>
+                    <div class="card-content back">
+                      <h2>Card 3</h2>
+                      <p>This is the back of card 3</p>
+                    </div>
+                  </div>
+
+                </div>
+            
+              </div>
+            </div>
           </section>
 
           <section id="section4">
-            <h1>memory of the day.</h1>
-            <p>Phasellus in rutrum turpis, sed malesuada ipsum.</p>
+            <h1>share a song.</h1>
+            <p>Think you know a song that I will like? Send it through and I will give it a listen! Remember, no suggestion is a bad one... unless it's country music.</p>
           </section>
           
           <section id="section5">
             <h1>know your own soul.</h1>
-            <p>Donec ac diam eget quam ornare eleifend.</p>
+            <p>Now you've seen my Soul Portfolio, I bet you're curious about your own. Fill in the form below and discover your Soul.</p>
           </section>
 
         </div>
